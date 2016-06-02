@@ -20,3 +20,4 @@ Instructions for building Strato:
     > cd strato
     > stack install
 ```
+# release
