@@ -1,14 +1,21 @@
+#!/bin/bash
 
 set -e
 
-prefix=${prefix:-./package}
-bindir=${bindir:-$prefix/root/usr/bin}
+#Set up input params
 
-if [ ! "`ls -A $prefix`" == "" ]
+PKGDIR=${PKGDIR:-./package}
+ROOTDIR=${ROOTDIR:-$PKGDIR/root}
+BINDIR=${BINDIR:-$ROOTDIR/usr/bin}
+
+################
+
+if [ ! "`ls -A $PKGDIR`" == "" ]
 then
 	echo "directory not empty"
+	exit 1
 fi
 
-mkdir -p $bindir
+mkdir -p $ROOTDIR
 
-stack install --local-bin-path=$bindir
+stack install --local-bin-path=$BINDIR
