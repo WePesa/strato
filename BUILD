@@ -5,7 +5,7 @@ set -e
 #Set up input params
 
 PKGDIR=${PKGDIR:-./package}
-ROOTDIR=${ROOTDIR:-$PKGDIR/root}
+ROOTDIR=${ROOTDIR:-$PKGDIR}
 BINDIR=${BINDIR:-$ROOTDIR/usr/bin}
 
 ################
@@ -16,6 +16,8 @@ then
 	exit 1
 fi
 
-mkdir -p $ROOTDIR
+cp -a pkg/* $ROOTDIR
+
+mkdir -p $ROOTDIR/usr/bin
 
 stack install --local-bin-path=$BINDIR
