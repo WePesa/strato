@@ -1,6 +1,8 @@
 #!/bin/bash
 
-set -e
+#set -e
+
+global-db --pghost postgres
 
 function newnode {
   initialize=false
@@ -34,9 +36,9 @@ function newnode {
   echo "Starting ethereum-vm"
   runForever ethereum-vm --miner=$miningAlgorithm --createTransactionResults=true --miningVerification=$verifyBlocks >> logs/ethereum-vm 2>&1
 
-  if $initialize
-  then doRegister
-  fi
+#  if $initialize
+#  then doRegister
+#  fi
 
   echo "Becoming strato-api"
   HOST=0.0.0.0 PORT=3000 APPROOT="" exec strato-api 2>&1 | tee -a logs/strato-api
@@ -56,7 +58,7 @@ function doInit {
   cp node_modules/blockapps-js/dist/blockapps{,-min}.js static/js
 
   echo "Creating a random coinbase"
-  ./mkCoinbase
+  #./mkCoinbase
 }
 
 function doRegister {
