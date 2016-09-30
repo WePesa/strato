@@ -21,3 +21,4 @@ cp -a pkg/* $ROOTDIR
 mkdir -p $ROOTDIR/usr/bin
 
 stack install --local-bin-path=$BINDIR
+./build-solc.sh $ROOTDIR/usr
