@@ -1,24 +1,24 @@
-https://github.com/blockapps/ethereum-rlp
-https://github.com/blockapps/merkle-patricia-db
-https://github.com/blockapps/ethereum-encryption
-https://github.com/blockapps/blockapps-data
-https://github.com/blockapps/strato-conf
-https://github.com/blockapps/blockapps-util
+blockapps/ethereum-rlp
+blockapps/merkle-patricia-db
+blockapps/ethereum-encryption
+blockapps/blockapps-data
+blockapps/strato-conf
+blockapps/blockapps-util
 
-https://github.com/blockapps/strato-init
+blockapps/strato-init
 
-https://github.com/blockapps/ethereum-discovery
+blockapps/ethereum-discovery
 
-https://github.com/blockapps/strato-p2p-client
-https://github.com/blockapps/strato-p2p-server
-https://github.com/blockapps/miner-ethash
-https://github.com/blockapps/strato-quarry
-https://github.com/blockapps/strato-adit
-https://github.com/blockapps/ethereum-vm
+blockapps/strato-p2p-client
+blockapps/strato-p2p-server
+blockapps/miner-ethash
+blockapps/strato-quarry
+blockapps/strato-adit
+blockapps/ethereum-vm
 
-https://github.com/blockapps/strato-index
-https://github.com/blockapps/solidity-abi
-https://github.com/blockapps/strato-api
+blockapps/strato-index
+blockapps/solidity-abi
+blockapps/strato-api
 
-https://github.com/blockapps/deployments
-https://github.com/blockapps/blockapps-tools
+blockapps/deployments
+blockapps/blockapps-tools
