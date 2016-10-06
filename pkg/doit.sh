@@ -1,8 +1,6 @@
 #!/bin/bash
 
-#set -e
-
-global-db --pghost postgres
+set -e
 
 function newnode {
   initialize=false
@@ -155,4 +153,5 @@ do  echo "Waiting for Kafka to become available"
     sleep 1
 done
 
+global-db --pghost postgres
 newnode
