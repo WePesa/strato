@@ -17,4 +17,5 @@ fi
 
 mkdir -p $bindir
 
+stack install alex happy
 stack install --local-bin-path=$bindir
