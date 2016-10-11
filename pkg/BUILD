@@ -4,16 +4,9 @@ set -e
 
 #Set up input params
 
-builddir=${builddir:-$(pwd)/pkg/build}
 bindir=$builddir/usr/bin
 
 ################
-
-if [ -n $(ls -A $builddir) ]
-then
-  echo "directory not empty"
-  exit 1
-fi
 
 mkdir -p $bindir
 
