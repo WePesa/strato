@@ -146,8 +146,6 @@ if [[ -n $genesisBlock ]]
 then echo "$genesisBlock" > ${genesis}Genesis.json
 fi
 
-apt-get install -y netcat
-
 until nc -z zookeeper 2181 >&/dev/null
 do  echo "Waiting for Kafka to become available"
     sleep 1
