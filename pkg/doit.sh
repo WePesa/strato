@@ -56,7 +56,7 @@ function doInit {
   cp node_modules/blockapps-js/dist/blockapps{,-min}.js static/js
 
   echo "Creating a random coinbase"
-  #./mkCoinbase
+  ./mkCoinbase
 }
 
 function doRegister {
@@ -151,5 +151,6 @@ do  echo "Waiting for Kafka to become available"
     sleep 1
 done
 
-global-db --pghost postgres
+cd /var/lib/strato
+global-db --pghost postgres || { echo "Ignoring."; true; } # If it fails, it just means we already created the global db
 newnode
