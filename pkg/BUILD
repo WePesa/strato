@@ -26,14 +26,15 @@ solcdir=$pkgdir/solidity/build
 if [[ -d $solcdir ]]
 then
   echo "$solcdir already exists, so solc was built.  Not rebuilding."
-  exit
+else
+  git -C $pkgdir clone --recursive --branch v0.3.6 https://github.com/ethereum/solidity.git
+  mkdir -p $solcdir
+  
+  (
+    cd $solcdir
+    cmake -DCMAKE_INSTALL_PREFIX=$builddir/usr ..
+    make -j4 solc
+  )
 fi
-
-git -C $pkgdir clone --recursive --branch v0.3.6 https://github.com/ethereum/solidity.git
-mkdir -p $solcdir
-
-cd $solcdir
-cmake -DCMAKE_INSTALL_PREFIX=$builddir/usr ..
-make -j4 solc
-make install
+make -C $solcdir install
 
