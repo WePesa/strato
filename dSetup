@@ -1,4 +1,0 @@
-docker build -t build buildDocker
-docker run -it -v `pwd`:/root/strato -v globalstack:/root/.stack -v ~/.local:/root/.local -v localstack:/root/strato/.stack-work -w /root/strato build stack setup --allow-different-user
-docker run -it -v `pwd`:/root/strato -v globalstack:/root/.stack -v ~/.local:/root/.local -v localstack:/root/strato/.stack-work -w /root/strato build stack install alex --allow-different-user
-
