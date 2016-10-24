@@ -15,6 +15,7 @@ mkdir -p $stratohome
 stack install alex happy
 stack install --local-bin-path=$bindir
 cp mkCoinbase $stratohome
+cp ../strato-init/genesisBlocks/* $stratoHome
 
 cd $stratohome
 mkdir -p node_modules
