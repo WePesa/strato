@@ -23,7 +23,7 @@ npm install blockapps-js yaml-parser
 # Build our own solc because we need a specific version
 solcdir=$pkgdir/solidity/build
 
-if [[ -d $solcdir ]]
+if [[ -f $solcdir/Makefile ]]
 then
   echo "$solcdir already exists, so solc was built.  Not rebuilding."
 else
