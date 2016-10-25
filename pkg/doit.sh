@@ -39,13 +39,13 @@ function newnode {
 #  fi
 
   echo "Becoming strato-api"
-  HOST=0.0.0.0 PORT=3000 APPROOT="" exec strato-api 2>&1 | tee -a logs/strato-api
+  HOST=0.0.0.0 PORT=3000 APPROOT="" FETCH_LIMIT=2000 exec strato-api 2>&1 | tee -a logs/strato-api
 }
 
 function doInit {
   cmd="strato-setup --pguser=$pgUser --password=$pgPass --genesisBlockName=$genesis --kafka=./kafka-topics.sh \
                     --pghost=$pgHost --kafkahost=$kafkaHost --zkhost=$zkHost --lazyblocks=$lazyBlocks \
-                    --addBootnodes=$addBootnodes"
+                    --addBootnodes=$addBootnodes $stratoBootnode"
   echo $cmd
   $cmd
 
@@ -99,48 +99,19 @@ setEnv miningAlgorithm Instant
 
 setEnv networkID 6
 setEnv genesisBlock ""
+setEnv bootnode ""
 
 setEnv mineBlocks true
 setEnv verifyBlocks false
-setEnv instantMining false
-setEnv lazyBlocks false 
+setEnv instantMining true
+setEnv lazyBlocks true 
 setEnv serveBlocks true
 setEnv receiveBlocks true
-setEnv addBootnodes true
+setEnv addBootnodes false
 setEnv noMinPeers false
 
-setEnv mode single
-
-case $mode in
-  single)
-    miningAlgorithm="Instant"
-    mineBlocks=true
-    lazyBlocks=true
-    serveBlocks=false
-    receiveBlocks=false
-    genesis="stablenet"
-    ;;
-  mixed*)
-    mineBlocks=false
-    lazyBlocks=false
-    verifyBlocks=false
-    serveBlocks=true 
-    receiveBlocks=true
-    addBootnodes=false
-    noMinPeers=true
-    genesis=$mode
-    ;;
-  ethereum)
-    miningAlgorithm="Ethash"
-    mineBlocks=true
-    lazyBlocks=false
-    verifyBlocks=true
-    serveBlocks=true
-    receiveBlocks=true
-    addBootnodes=true
-    genesis="livenet"
-    ;;
-esac
+stratoBootnode=${bootnode:+--stratoBootnode=$bootnode}
+[[ -n $bootnode ]] && addBootnodes=true
 
 if [[ -n $genesisBlock ]]
 then echo "$genesisBlock" > ${genesis}Genesis.json
