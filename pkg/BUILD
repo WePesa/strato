@@ -22,13 +22,14 @@ mkdir -p node_modules
 npm install blockapps-js yaml-parser
 
 # Build our own solc because we need a specific version
-solcdir=$pkgdir/solidity/build
+solcdir=$workdir/solidity/build
 
 if [[ -f $solcdir/Makefile ]]
 then
   echo "$solcdir already exists, so solc was built.  Not rebuilding."
 else
-  git -C $pkgdir clone --recursive --branch v0.3.6 https://github.com/ethereum/solidity.git
+  rm -rf $workdir/solidity
+  git -C $workdir clone --recursive --branch v0.3.6 https://github.com/ethereum/solidity.git
   mkdir -p $solcdir
   
   (
