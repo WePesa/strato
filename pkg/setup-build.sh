@@ -3,7 +3,7 @@
 set -e
 
 $sudo apt-get -y install \
-  lsb-release \
+  lsb-release cmake \
   curl libleveldb-dev libpq-dev libpcre3-dev \
   libboost-all-dev libjsoncpp-dev libstdc++6
 $sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 575159689BEFB442
