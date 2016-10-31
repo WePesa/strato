@@ -87,12 +87,12 @@ echo "Environment variables:"
 
 setEnv pgUser postgres
 setEnv pgPass api
-setEnv pgHost postgres
+setEnv pgHost localhost
 
-setEnv kafkaHost kafka
-setEnv zkHost zookeeper
+setEnv kafkaHost localhost
+setEnv zkHost localhost
 
-setEnv explorerHost explorer
+setEnv explorerHost localhost
 
 setEnv genesis stablenet
 setEnv miningAlgorithm Instant
@@ -122,6 +122,5 @@ do  echo "Waiting for Kafka to become available"
     sleep 1
 done
 
-cd /var/lib/strato
 global-db --pghost postgres || { echo "Ignoring."; true; } # If it fails, it just means we already created the global db
 newnode
