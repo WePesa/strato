@@ -12,7 +12,7 @@ stratohome=$builddir/var/lib/strato
 mkdir -p $bindir
 mkdir -p $stratohome
 
-stack install alex happy
+stack setup
 stack install --local-bin-path=$bindir
 cp mkCoinbase $stratohome
 cp strato-init/genesisBlocks/* $stratohome
