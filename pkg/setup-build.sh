@@ -13,3 +13,7 @@ $sudo apt-get update
 $sudo apt-get -y --allow-unauthenticated install stack
 stack setup
 stack install alex happy
+
+echo >&3 "Installing node..."
+curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+sudo apt-get install -y nodejs
