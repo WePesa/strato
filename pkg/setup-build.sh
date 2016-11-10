@@ -15,5 +15,5 @@ stack setup
 stack install alex happy
 
 echo "Installing node..."
-curl -sL https://deb.nodesource.com/setup_6.x | $sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_6.x | $sudo bash -
 $sudo apt-get install -y nodejs
