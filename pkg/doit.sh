@@ -25,9 +25,9 @@ function newnode {
 
   if $receiveBlocks
   then echo "Starting strato-p2p-client"
-       runForever strato-p2p-client --cNetworkID=$networkID --sqlPeers=true >> logs/strato-p2p-client 2>&1 
+       runForever strato-p2p-client --cNetworkID=$networkID --sqlPeers=true >> logs/strato-p2p-client 2>&1
   fi
-  
+
   echo "Starting strato-index"
   runForever strato-index >> logs/strato-index 2>&1
 
@@ -104,7 +104,7 @@ setEnv bootnode ""
 setEnv mineBlocks true
 setEnv verifyBlocks false
 setEnv instantMining true
-setEnv lazyBlocks true 
+setEnv lazyBlocks true
 setEnv serveBlocks true
 setEnv receiveBlocks true
 setEnv addBootnodes false
@@ -112,6 +112,8 @@ setEnv noMinPeers false
 
 stratoBootnode=${bootnode:+--stratoBootnode=$bootnode}
 [[ -n $bootnode ]] && addBootnodes=true
+
+cd /var/lib/strato
 
 if [[ -n $genesisBlock ]]
 then echo "$genesisBlock" > ${genesis}Genesis.json
@@ -122,6 +124,5 @@ do  echo "Waiting for Kafka to become available"
     sleep 1
 done
 
-cd /var/lib/strato
 global-db --pghost postgres || { echo "Ignoring."; true; } # If it fails, it just means we already created the global db
 newnode
