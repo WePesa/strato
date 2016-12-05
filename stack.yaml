@@ -38,6 +38,8 @@ extra-deps:
 - normaldistribution-1.1.0.3
 - milena-0.5.0.0
 - global-lock-0.1
+- json-rpc-server-0.2.5.0
+- monadIO-0.10.1.4
 resolver: lts-3.4
 extra-include-dirs:
 - /usr/local/include
