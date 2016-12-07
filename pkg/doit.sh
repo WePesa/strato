@@ -28,6 +28,9 @@ function newnode {
        runForever strato-p2p-client --cNetworkID=$networkID --sqlPeers=true >> logs/strato-p2p-client 2>&1
   fi
 
+  echo "Starting strato-sequencer"
+  runForever strato-sequencer >> logs/strato-sequencer 2>&1
+
   echo "Starting strato-index"
   runForever strato-index >> logs/strato-index 2>&1
 
