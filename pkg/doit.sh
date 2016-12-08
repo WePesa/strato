@@ -13,9 +13,8 @@ function newnode {
   echo "Starting Strato processes. All output is logged to $PWD/logs."
 
   if $mineBlocks
-  then echo "Starting strato-adit and strato-quarry"
+  then echo "Starting strato-adit"
        runForever strato-adit --aMiner=$miningAlgorithm >> logs/strato-adit 2>&1
-       runForever strato-quarry >> logs/strato-quarry 2>&1
   fi
 
   if $serveBlocks
