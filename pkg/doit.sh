@@ -15,7 +15,7 @@ function newnode {
   if $mineBlocks
   then echo "Starting strato-adit and strato-quarry"
       export miningThreads=${miningThreads:-1}
-      runForever strato-adit --threads=$miningThreads:-1} --aMiner=$miningAlgorithm >> logs/strato-adit 2>&1
+      runForever strato-adit --threads=${miningThreads:-1} --aMiner=$miningAlgorithm >> logs/strato-adit 2>&1
        runForever strato-quarry >> logs/strato-quarry 2>&1
   fi
 
