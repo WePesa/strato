@@ -16,7 +16,7 @@ function newnode {
   then echo "Starting strato-adit and strato-quarry"
       export miningThreads=${miningThreads:-1}
       runForever strato-adit --threads=${miningThreads:-1} --aMiner=$miningAlgorithm >> logs/strato-adit 2>&1
-       runForever strato-quarry >> logs/strato-quarry 2>&1
+      runForever strato-quarry >> logs/strato-quarry 2>&1
   fi
 
   if $serveBlocks
@@ -44,9 +44,12 @@ function newnode {
 }
 
 function doInit {
+  export blockTime=${blockTime:-13}
+  export minBlockDifficulty=${minBlockDifficulty:-131072}
   cmd="strato-setup --pguser=$pgUser --password=$pgPass --genesisBlockName=$genesis --kafka=./kafka-topics.sh \
                     --pghost=$pgHost --kafkahost=$kafkaHost --zkhost=$zkHost --lazyblocks=$lazyBlocks \
-                    --addBootnodes=$addBootnodes $stratoBootnode"
+                    --addBootnodes=$addBootnodes $stratoBootnode \
+                    --blockTime=$blockTime --minBlockDifficulty=$minBlockDifficulty"
   echo $cmd
   $cmd
 
