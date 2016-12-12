@@ -21,6 +21,7 @@ packages:
 - strato-adit/
 - strato-index/
 - ethereum-test/
+- strato-sequencer/
 - location:
     git: https://github.com/haskoin/haskoin
     commit: b71bcfa4701e129b69776e6951fe0bb7c8b26ea3
@@ -46,6 +47,7 @@ extra-deps:
 - contravariant-extras-0.3.3.1
 - fail-4.9.0.0
 - tuple-th-0.2.5
+- bytestring-arbitrary-0.1.0
 resolver: lts-3.4
 extra-include-dirs:
 - /usr/local/include
