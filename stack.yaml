@@ -48,6 +48,9 @@ extra-deps:
 - fail-4.9.0.0
 - tuple-th-0.2.5
 - bytestring-arbitrary-0.1.0
+- json-rpc-server-0.2.5.0
+- monadIO-0.10.1.4
+
 resolver: lts-3.4
 extra-include-dirs:
 - /usr/local/include
