@@ -5,6 +5,7 @@ https://github.com/blockapps/blockapps-data
 https://github.com/blockapps/strato-conf
 https://github.com/blockapps/blockapps-util
 https://github.com/blockapps/fast-ecrecover
+https://github.com/blockapps/ecrecover
 
 https://github.com/blockapps/strato-init
 
@@ -22,5 +23,6 @@ https://github.com/blockapps/solidity-abi
 https://github.com/blockapps/strato-api
 https://github.com/blockapps/deployments
 https://github.com/blockapps/blockapps-tools
-https://github.com/blockapps/strato-sequencer
 https://github.com/blockapps/ethereum-test
+https://github.com/blockapps/strato-sequencer
+
