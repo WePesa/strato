@@ -22,6 +22,7 @@ packages:
 - strato-index/
 - ethereum-test/
 - strato-sequencer/
+- ethereum-jsonrpc/
 - location:
     git: https://github.com/haskoin/haskoin
     commit: b71bcfa4701e129b69776e6951fe0bb7c8b26ea3
