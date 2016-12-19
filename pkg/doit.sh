@@ -37,9 +37,9 @@ function newnode {
   echo "Starting ethereum-vm"
   runForever ethereum-vm --miner=$miningAlgorithm --diffPublish=true --createTransactionResults=true --miningVerification=$verifyBlocks >> logs/ethereum-vm 2>&1
 
-  #if $initialize
-  #then doRegister
-  #fi
+  if $initialize
+  then doRegister
+  fi
 
   echo "Becoming strato-api"
   HOST=0.0.0.0 PORT=3000 APPROOT="" FETCH_LIMIT=2000 exec strato-api 2>&1 | tee -a logs/strato-api
