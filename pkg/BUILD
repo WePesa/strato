@@ -14,7 +14,7 @@ mkdir -p $stratohome
 
 stack setup
 stack install --local-bin-path=$bindir
-stack build --test --no-run-tests
+stack build ethereum-test --test --no-run-tests
 cp mkCoinbase $stratohome
 cp strato-init/genesisBlocks/* $stratohome
 
